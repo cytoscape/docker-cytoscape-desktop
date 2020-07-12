@@ -1,52 +1,20 @@
-FROM selenium/standalone-chrome-debug:3.13.0
+FROM ubuntu:20.04
 
 # PARAMETERS
-ENV CYTOSCAPE_VERSION 3.7.0
+ENV CYTOSCAPE_VERSION 3.8.0
 
 # CHANGE USER
 USER root
 
-RUN apt-get update
-
 # INSTALL JAVA
-RUN apt-get -y install default-jdk
+RUN apt-get update && apt-get -y install default-jdk libxcursor1 xvfb supervisor wget x11vnc
+RUN wget --progress=dot:giga --local-encoding=UTF-8 -v https://github.com/cytoscape/cytoscape/releases/download/3.8.0/cytoscape-unix-3.8.0.tar.gz -O cytoscape-unix-3.8.0.tar.gz
+RUN tar xf cytoscape-unix-3.8.0.tar.gz && rm cytoscape-unix-3.8.0.tar.gz
 
 # Set JAVA_HOME From sudo update-alternatives --config java
-RUN echo '/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java' >> /etc/environment
+RUN echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> /etc/environment
 
-# INSTALL ADDITIONAL TOOLS
-RUN apt-get install -y nano links git wget curl htop
+COPY supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# INSTALL SUPERVISOR
-RUN apt-get install -y supervisor
-
-# INSTALL CYTOSCAPE
-USER seluser
-
-RUN mkdir /home/seluser/cytoscape
-WORKDIR /home/seluser/cytoscape
-RUN wget --progress=dot:giga --local-encoding=UTF-8 -v https://github.com/cytoscape/cytoscape/releases/download/$CYTOSCAPE_VERSION/cytoscape-$CYTOSCAPE_VERSION.tar.gz -O cytoscape-$CYTOSCAPE_VERSION.tar.gz
-
-RUN tar -zxvf cytoscape-$CYTOSCAPE_VERSION.tar.gz
-RUN rm cytoscape-$CYTOSCAPE_VERSION.tar.gz
-
-# To launch it:
-RUN echo "/home/seluser/cytoscape/cytoscape-unix-$CYTOSCAPE_VERSION/cytoscape.sh --rest 1234" > /home/seluser/cytoscape/start.sh
-RUN chmod 777 /home/seluser/cytoscape/start.sh
-
-# INSTALL NOVNC
-WORKDIR /home/seluser
-RUN git clone https://github.com/novnc/noVNC.git
-
-# CONFIGURE supervisord
-COPY supervisor/*.conf /etc/supervisor/conf.d/
-
-# CLEAN UP
-USER root
-## Clean up
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-#USER seluser
-
-WORKDIR /home/seluser/cytoscape
-
-CMD ["sudo", "/usr/bin/supervisord"]
+EXPOSE 1234 5900
+CMD ["/usr/bin/supervisord"]
