@@ -18,6 +18,7 @@ Clone this repo, cd into it and build the container yourself
 git clone https://github.com/cytoscape/docker-cytoscape-desktop
 cd docker-cytoscape-desktop
 git checkout -t origin/add-rcy3
+cd rcy3
 docker build -t cytoscape/cytoscape-desktop .
 ```
 
