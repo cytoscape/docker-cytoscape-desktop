@@ -17,6 +17,7 @@ Clone this repo, cd into it and build the container yourself
 ```
 git clone https://github.com/cytoscape/docker-cytoscape-desktop
 cd docker-cytoscape-desktop
+git checkout -t origin/add-rcy3
 docker build -t cytoscape/cytoscape-desktop .
 ```
 
@@ -24,9 +25,10 @@ docker build -t cytoscape/cytoscape-desktop .
 ## Launch Cytoscape in Docker
 In a local terminal window, issue the following commands to run this docker container and launch Cytoscape:
 ```
-docker run -p 6080:6080 cytoscape/cytoscape-desktop
+docker run -p 6080:6080 -p 8787 cytoscape/cytoscape-desktop
 ```
 
-Open the URL below with your web browser:
+1. Open the URL below with your web browser:
 
 * http://localhost:6080/vnc.html
+* http://localhost:8787/ (username: rstudio, password: cytoscape)
