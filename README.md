@@ -17,7 +17,6 @@ Clone this repo, cd into it and build the container yourself
 ```
 git clone https://github.com/cytoscape/docker-cytoscape-desktop
 cd docker-cytoscape-desktop
-git checkout -t origin/simplify
 docker build -t cytoscape/cytoscape-desktop .
 ```
 
@@ -25,16 +24,9 @@ docker build -t cytoscape/cytoscape-desktop .
 ## Launch Cytoscape in Docker
 In a local terminal window, issue the following commands to run this docker container and launch Cytoscape:
 ```
-docker run -p 1234:1234 -p 5900:5900 cytoscape/cytoscape-desktop
+docker run -p 6080:6080 cytoscape/cytoscape-desktop
 ```
 
-### VNC
-#### UltraVNC viewer
-Connect with UltraVNC viewer (http://www.uvnc.com/) using the URL below:
+Open the URL below with your web browser:
 
-* URL: localhost:5900
-
-No password is required.
-
-https://user-images.githubusercontent.com/12192/133522202-d2be5f77-488a-436e-a981-71b69a20398e.mp4
-
+* http://localhost:6080/vnc.html
