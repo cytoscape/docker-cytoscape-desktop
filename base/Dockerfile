@@ -20,6 +20,6 @@ RUN cd /cytoscape-unix-3.9.1/framework/system/org/cytoscape/property-impl/3.9.1 
 # Set JAVA_HOME From sudo update-alternatives --config java
 RUN echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> /etc/environment
 
-COPY supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 CMD ["/usr/bin/supervisord"]
