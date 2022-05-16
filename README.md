@@ -4,9 +4,12 @@ Cytoscape Desktop in Docker image with GUI running using xvfb and VNC server
 
 ![cytoscape_desktop](cytoscape_desktop.png)
 
+<!---
 Cytoscape content at DockerHub can be found here:
 
 https://hub.docker.com/u/cytoscape
+-->
+
 
 # Build
 Clone this repo, cd into it and build the container yourself
