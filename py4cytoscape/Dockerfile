@@ -1,5 +1,5 @@
 FROM jupyter/scipy-notebook:6b49f3337709
-RUN pip install py4cytoscape
+RUN pip install py4cytoscape==1.2.0
 
 # PARAMETERS
 ENV CYTOSCAPE_VERSION 3.9.1
