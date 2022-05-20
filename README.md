@@ -10,7 +10,7 @@ Cytoscape content at DockerHub can be found here:
 https://hub.docker.com/u/cytoscape
 -->
 
-# Run
+# (Get the pre-built Docker image from dockerhub and) Run the image.
 ## Launch Cytoscape with RStudio(+RCy3) in Docker
 In a local terminal window, run the following command to create a Docker container for Cytoscape+R automation:
 
