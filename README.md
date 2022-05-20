@@ -39,7 +39,7 @@ docker run -p 6080:6080 -p 8888:8888 cytoscape/cytoscape-desktop:py4cytoscape.1.
 
 In a local terminal window, run the following command to create a Docker container for Cytoscape only:
 ```
-docker run -p 6080:6080 -p 8888:8888 cytoscape/cytoscape-desktop:3.9.1
+docker run -p 6080:6080 cytoscape/cytoscape-desktop:3.9.1
 ```
 
 1. Open the URL below with your web browser:
