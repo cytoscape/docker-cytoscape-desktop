@@ -18,14 +18,14 @@ Clone this repo, cd into it and build the container yourself
 ```
 git clone https://github.com/cytoscape/docker-cytoscape-desktop
 cd docker-cytoscape-desktop/rcy3
-docker build -t cytoscape/cytoscape-desktop-rcy3 .
+docker build -t cytoscape/cytoscape-desktop:rcy3.2.16.0 .
 ```
 
 ## For Cytoscape Automation with py4cytoscape
 ```
 git clone https://github.com/cytoscape/docker-cytoscape-desktop
 cd docker-cytoscape-desktop/py4cytoscape
-docker build -t cytoscape/cytoscape-desktop-p4c .
+docker build -t cytoscape/cytoscape-desktop:py4cytoscape.1.2.0 .
 ```
 
 
@@ -33,7 +33,7 @@ docker build -t cytoscape/cytoscape-desktop-p4c .
 ## Launch Cytoscape with RStudio(+RCy3) in Docker
 In a local terminal window, issue the following commands to run this docker container and launch Cytoscape:
 ```
-docker run -p 6080:6080 -p 8787:8787 cytoscape/cytoscape-desktop-rcy3
+docker run -p 6080:6080 -p 8787:8787 cytoscape/cytoscape-desktop:rcy3.2.16.0
 ```
 
 1. Open the URL below with your web browser:
@@ -44,7 +44,7 @@ docker run -p 6080:6080 -p 8787:8787 cytoscape/cytoscape-desktop-rcy3
 ## Launch Cytoscape with Jupyter(+py4cytoscape) in Docker
 In a local terminal window, issue the following commands to run this docker container and launch Cytoscape:
 ```
-docker run -p 6080:6080 -p 8888:8888 cytoscape/cytoscape-desktop-p4c
+docker run -p 6080:6080 -p 8888:8888 cytoscape/cytoscape-desktop:py4cytoscape.1.2.0
 ```
 
 1. Open the URL below with your web browser:
