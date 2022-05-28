@@ -22,6 +22,4 @@ RUN cd /cytoscape-unix-${CYTOSCAPE_VERSION}/framework/system/org/cytoscape/prope
 RUN echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> /etc/environment
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-ARG WIDTH_HEIGHT_DEPTH="1920x1080x24"
 CMD ["/usr/bin/supervisord"]
