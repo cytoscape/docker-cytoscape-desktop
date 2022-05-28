@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:python-3.9.12
+FROM jupyter/scipy-notebook:python-3.9.13
 RUN pip install py4cytoscape==1.3.0
 
 # PARAMETERS
