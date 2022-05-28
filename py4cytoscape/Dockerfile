@@ -25,4 +25,3 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 ARG WIDTH_HEIGHT_DEPTH="1920x1080x24"
 CMD ["/usr/bin/supervisord"]
-EXPOSE 8888 6080
