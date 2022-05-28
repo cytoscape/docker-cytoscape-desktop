@@ -20,7 +20,7 @@ docker run -p 6080:6080 -p 8787:8787 cytoscape/cytoscape-desktop:rcy3-2.16.0
 
 1. Open the URL below with your web browser:
 
-* http://localhost:6080/vnc.html (and Click the "Connect" button) 
+* http://localhost:6080/vnc_auto.html
 * http://localhost:8787/ (username: rstudio, password: cytoscape)
 
 ## Launch Cytoscape with Jupyter(+py4cytoscape) in Docker
@@ -32,7 +32,7 @@ docker run -p 6080:6080 -p 8888:8888 cytoscape/cytoscape-desktop:py4cytoscape-1.
 
 1. Open the URL below with your web browser:
 
-* http://localhost:6080/vnc.html (and Click the "Connect" button) 
+* http://localhost:6080/vnc_auto.html
 * http://localhost:8888/lab
 
 ## Launch Cytoscape only in Docker
@@ -44,7 +44,7 @@ docker run -p 6080:6080 cytoscape/cytoscape-desktop:3.9.1
 
 1. Open the URL below with your web browser:
 
-* http://localhost:6080/vnc.html (and Click the "Connect" button) 
+* http://localhost:6080/vnc_auto.html
 
 # (Or) Build the image yourself
 Clone this repo, cd into it and build the image yourself
