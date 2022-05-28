@@ -3,7 +3,6 @@ RUN pip install py4cytoscape==1.3.0
 
 # PARAMETERS
 ENV CYTOSCAPE_VERSION 3.9.1
-ARG WIDTH_HEIGHT_DEPTH="1920x1080x24"
 
 # CHANGE USER
 USER root
@@ -24,5 +23,6 @@ RUN echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> /etc/environment
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+ARG WIDTH_HEIGHT_DEPTH="1920x1080x24"
 CMD ["/usr/bin/supervisord"]
 EXPOSE 8888 6080
