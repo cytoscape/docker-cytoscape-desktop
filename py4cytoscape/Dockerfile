@@ -17,7 +17,7 @@ RUN cd /cytoscape-unix-${CYTOSCAPE_VERSION}/framework/system/org/cytoscape/prope
     && mv cytoscape3.props.tmp cytoscape3.props \
     && jar -uf property-impl-${CYTOSCAPE_VERSION}.jar cytoscape3.props \
     && rm cytoscape3.props \
-    && mkdir /home/jovyan/CytoscapeConfiguration/filetransfer/default_sandbox && chmod 775 -R /home/jovyan/CytoscapeConfiguration \
+    && mkdir -p /home/jovyan/CytoscapeConfiguration/filetransfer/default_sandbox && chmod 775 -R /home/jovyan/CytoscapeConfiguration \
     && cd /
 # Set JAVA_HOME From sudo update-alternatives --config java
 RUN echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> /etc/environment
