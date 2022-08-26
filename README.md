@@ -46,6 +46,15 @@ docker run -p 6080:6080 -p 1234:1234 cytoscape/cytoscape-desktop:3.9.1
 
 * http://localhost:6080/vnc_auto.html
 
+2. Run the following command in your local terminal.
+  ```
+  curl localhost:1234
+  ```
+  Then you will get the following message.
+  ```
+  {"availableApiVersions":["v1"]}
+  ```
+
 # (Or) Build the image yourself
 Clone this repo, cd into it and build the image yourself
 
