@@ -28,7 +28,6 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-        working-directory: base
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
