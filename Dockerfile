@@ -9,7 +9,7 @@ USER root
 
 # INSTALL JAVA
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt-get update && apt-get -y install openjdk-17-jdk libxcursor1 xvfb supervisor wget x11vnc novnc websockify
+RUN apt-get update && apt-get -y install openjdk-17-jdk libxcursor1 xvfb supervisor wget x11vnc novnc websockify fluxbox
 RUN wget https://github.com/cytoscape/cytoscape/releases/download/${CYTOSCAPE_VERSION}/cytoscape-unix-${CYTOSCAPE_VERSION}.tar.gz
 RUN tar xf cytoscape-unix-${CYTOSCAPE_VERSION}.tar.gz && rm cytoscape-unix-${CYTOSCAPE_VERSION}.tar.gz
 RUN cd /cytoscape-unix-${CYTOSCAPE_VERSION}/framework/system/org/cytoscape/property-impl/${CYTOSCAPE_VERSION} \

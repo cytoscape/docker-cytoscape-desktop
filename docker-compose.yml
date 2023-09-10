@@ -5,13 +5,14 @@ services:
     ports:
       - '8888:8888'
     environment:
-      - JUPYTER_TOKEN=easy
-      - PASSWORD=easy
+      - JUPYTER_TOKEN=cytoscape
+      - PASSWORD=cytoscape
   cytoscape-desktop:
     image: cytoscape/cytoscape-desktop:3.10.1
-    environment:
-      - XVFBSCREENSIZE = "1920x1080x24"
     ports:
       - '6080:6080'
       - '1234:1234'
-      
+    environment:
+      - XVFB_SCREEN_WIDTH=1920
+      - XVFB_SCREEN_HEIGHT=1080
+      - CYREST_PORT=2345
