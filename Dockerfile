@@ -2,11 +2,13 @@ FROM ubuntu:22.04
 
 # PARAMETERS
 ENV CYTOSCAPE_VERSION 3.10.1
+ENV TZ=Asia/Tokyo
 
 # CHANGE USER
 USER root
 
 # INSTALL JAVA
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get -y install openjdk-17-jdk libxcursor1 xvfb supervisor wget x11vnc novnc websockify
 RUN wget https://github.com/cytoscape/cytoscape/releases/download/${CYTOSCAPE_VERSION}/cytoscape-unix-${CYTOSCAPE_VERSION}.tar.gz
 RUN tar xf cytoscape-unix-${CYTOSCAPE_VERSION}.tar.gz && rm cytoscape-unix-${CYTOSCAPE_VERSION}.tar.gz
