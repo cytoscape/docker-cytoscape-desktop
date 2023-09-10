@@ -10,7 +10,7 @@ Cytoscape Desktop in Docker image with GUI running using xvfb and VNC server
 2. run `mkdir trycydocker` command in your terminal.
 3. run `cd trycydocker` command in your terminal.
 4. copy [.env](https://github.com/cytoscape/docker-cytoscape-desktop/blob/master/.env) and [compose.yml](https://github.com/cytoscape/docker-cytoscape-desktop/blob/master/compose.yml) to the `trycydocker` directory
-5. run `docker-compose up -d` command in your terminal.
+5. run `docker-compose up -d` command in the `trycydocker` directory.
 6. open `http://localhost:8888/lab` and `http://localhost:6080/vnc_auto.html` in your web browser.
 7. (optional) In `http://localhost:8888/lab`, create a Notebook [for Python] and run `!pip install py4cytoscape` in a code Cell, or a Notebook [for R] and run
     ```
