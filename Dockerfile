@@ -1,7 +1,7 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 # PARAMETERS
-ENV CYTOSCAPE_VERSION 3.10.1
+ENV CYTOSCAPE_VERSION 3.10.4
 ENV TZ=Asia/Tokyo
 
 # CHANGE USER
@@ -14,7 +14,7 @@ RUN wget https://github.com/cytoscape/cytoscape/releases/download/${CYTOSCAPE_VE
 RUN tar xf cytoscape-unix-${CYTOSCAPE_VERSION}.tar.gz && rm cytoscape-unix-${CYTOSCAPE_VERSION}.tar.gz
 RUN cd /cytoscape-unix-${CYTOSCAPE_VERSION}/framework/system/org/cytoscape/property-impl/${CYTOSCAPE_VERSION} \
     && jar -xf property-impl-${CYTOSCAPE_VERSION}.jar cytoscape3.props \
-    && cat cytoscape3.props | sed "s/^cyrest.version.*/cyrest.version=3.13.2/g" > cytoscape3.props.tmp \
+    && cat cytoscape3.props | sed "s/^cyrest.version.*/cyrest.version=3.13.3/g" > cytoscape3.props.tmp \
     && mv cytoscape3.props.tmp cytoscape3.props \
     && jar -uf property-impl-${CYTOSCAPE_VERSION}.jar cytoscape3.props \
     && rm cytoscape3.props \
